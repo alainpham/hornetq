@@ -499,8 +499,8 @@ public class NettyConnector extends AbstractConnector
 
             if (sslEnabled && !useServlet)
             {
-               SSLEngine engine = context.createSSLEngine();
-
+               SSLEngine engine = context.createSSLEngine(host,port);
+               
                engine.setUseClientMode(true);
 
                engine.setWantClientAuth(true);
